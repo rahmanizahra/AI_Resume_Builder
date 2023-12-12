@@ -19,7 +19,7 @@ app.use(cors());
 
 //ROUTES
 app.use("/uploads", express.static("uploads"));
-
+app.use(express.static('public'))
 const generateID = () => Math.random().toString(36).substring(2, 10);
 let database = [];
 
@@ -102,7 +102,7 @@ console.log(chatgptData);
         id: generateID(),
         fullName,
         email,
-        image_url: `http://localhost:4001/uploads/${req.file.filename}`,
+        image_url: `/uploads/${req.file.filename}`,
         currentPosition,
         currentLength,
         currentTechnologies,
@@ -159,7 +159,7 @@ console.log(chatgptData);
         id: generateID(),
         fullName,
         email,
-        image_url: `http://localhost:4001/uploads/${req.file.filename}`,
+        image_url: `/uploads/${req.file.filename}`,
         currentPosition,
         currentLength,
         currentTechnologies,

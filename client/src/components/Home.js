@@ -35,7 +35,7 @@ const Home = ({ setResult }) => {
     formData.append("frenchChecked", frenchChecked);
     if(englishChecked){
     axios
-      .post("http://localhost:4001/resume/create", formData, {})
+      .post("/resume/create", formData, {})
       .then((res) => {
         if (res.data.message) {
           setResult(res.data.data);
@@ -45,7 +45,7 @@ const Home = ({ setResult }) => {
       .catch((err) => console.error(err));}
       else if(frenchChecked){
         axios
-      .post("http://localhost:4001/resumeFr/create", formData, {})
+      .post("/resumeFr/create", formData, {})
       .then((res) => {
         if (res.data.message) {
           setResult(res.data.data);
